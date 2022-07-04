@@ -19,13 +19,11 @@ function Header() {
         }}
       >
         <div className="flex items-center justify-between w-full mx-auto md:w-9/12">
-          <Link to="/">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/logo/logo.png`}
-              className="w-24 md:w-40"
-              alt=""
-            />
-          </Link>
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/logo/logo.png`}
+            className="w-24 md:w-40"
+            alt=""
+          />
           <div className="hidden space-x-5 font-bold text-white lg:block">
             <Link
               className="text-gray-200 hover:text-orange-400"
@@ -65,13 +63,7 @@ function Header() {
           </div>
 
           <div className="lg:hidden">
-            <button
-              disabeld="true"
-              href="t"
-              className="p-2 px-5 mr-3 text-xs text-white rounded-full bg-orange-500/50"
-            >
-              PG-Service <i className="fas fa-laptop"></i>
-            </button>
+
             <i
               onClick={() => {
                 setMenu(true);

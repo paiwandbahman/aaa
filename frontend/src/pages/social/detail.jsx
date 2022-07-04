@@ -32,7 +32,7 @@ function Detail() {
             </div>
             <div className="grid grid-cols-1 gap-5 mt-4 md:grid-cols-3">
                 {photo.map((item) => (
-                    <img className="rounded-xl mx-auto  h-[200px] bg-white shadow md:h-[310px]" alt="" src={`${process.env.REACT_APP_BASE_URL}images/${item}`} />
+                    <img className="rounded-xl mx-auto  h-[200px] bg-white shadow md:h-[310px]" alt="" src={item} />
                 ))}
             </div>
         </div>

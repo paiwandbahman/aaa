@@ -98,7 +98,7 @@ function Index() {
 
 										<td className="w-2/12 px-5 py-5 text-sm text-center bg-white border-b border-gray-200">
 											<p className="text-gray-900 whitespace-no-wrap">
-												<img alt="" src={'http://localhost:3001/images/' + item.photo[0]} className="w-full rounded" />
+												<img alt="" src={item.photo[0]} className="w-full rounded" />
 												<span className="px-2 text-xs ">{item.photo.length - 1} more images!</span>
 											</p>
 										</td>

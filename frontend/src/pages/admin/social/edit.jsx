@@ -2,15 +2,19 @@ import axios from "../../../axios";
 import { useState, useEffect } from "react";
 import swal from 'sweetalert';
 import { useParams } from 'react-router-dom'
+import { storage } from '../../../firebase';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 function Edit() {
   const { id } = useParams();
+  const [progresspercent, setProgresspercent] = useState(0);
+  const [btn, setBtn] = useState(true);
 
   const [data, setData] = useState({
     title: '',
     link: '',
     description: '',
-    photo: ''
+    photo: []
   });
 
   const [images, setImages] = useState([])
@@ -20,28 +24,46 @@ function Edit() {
   }
 
   const handlePhoto = (e) => {
-    setData({
-      ...data,
-      photo: [...data.photo, ...e.target.files],
-    });
+    setProgresspercent(0)
+
+    for (let index = 0; index < e.target.files.length; index++) {
+      setBtn(false)
+      const storageRef = ref(storage, `projects/${Array.from(Array(20), () => Math.floor(Math.random() * 36).toString(36)).join('') + '' + e.target.files[index].name}`);
+      const uploadTask = uploadBytesResumable(storageRef, e.target.files[index]);
+
+      uploadTask.on("state_changed",
+        (snapshot) => {
+          const progress =
+            Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          setProgresspercent(progress);
+          if (progress !== 100) {
+            setBtn(false)
+          }
+        },
+        (error) => {
+          alert(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            data.photo.push(downloadURL)
+            setTimeout(() => {
+              setBtn(true)
+              swal('one file is uploaded!')
+            }, 1000);
+          });
+        }
+
+      );
+    }
   }
 
   const handleForm = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
 
-    formData.append('title', data.title)
-    formData.append('link', data.link)
-    formData.append('description', data.description)
-
-    if (data.photo.length !== 0) {
-      for (let i = 0; i < data.photo.length; i++) {
-        formData.append("photos", data.photo[i]);
-      }
-    }
-
-    axios.put(`/admin/social/update/${id}`, formData).then(({ data }) => {
+    axios.put(`/admin/social/update/${id}`, {
+      data: data
+    }).then(({ data }) => {
       swal("Good job!", "Data has been updated!", "success");
     });
   };
@@ -54,10 +76,13 @@ function Edit() {
         title: item.title,
         link: item.link,
         description: item.description,
-        photo: ''
+        photo: []
       })
 
       setImages(item.photo)
+      setImages(item.photo)
+      setBtn(true)
+      setProgresspercent(0)
     })
   }, []);
 
@@ -182,6 +207,7 @@ function Edit() {
         </div>
 
         <button
+          disabled={btn ? false : true}
           className="
                 w-full
                 px-6
@@ -203,13 +229,20 @@ function Edit() {
         >
           Update
         </button>
+
+
+        {(progresspercent > 0) ? <>
+          <div className='mt-2 overflow-hidden text-center border-2 border-green-500 rounded '>
+            <div className='p-2 font-bold text-white bg-green-400' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
+          </div>
+        </> : <></>}
       </form>
 
-    <div className="grid grid-cols-3 gap-10 mt-10">
-      {images.map((item, index) => (
-        <img alt="" src={'http://localhost:3001/images/' + item} className="w-full rounded" />
-      ))}
-    </div>
+      <div className="grid grid-cols-3 gap-10 mt-10">
+        {images.map((item, index) => (
+          <img alt="" src={item} className="w-full rounded" />
+        ))}
+      </div>
 
 
     </div>

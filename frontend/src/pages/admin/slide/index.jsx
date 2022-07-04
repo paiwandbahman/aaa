@@ -74,7 +74,7 @@ function Index() {
 
 
 										<td className="w-8/12 px-5 py-5 text-sm text-center bg-white border-b border-gray-200">
-											<img alt="" src={'http://localhost:3001/images/' + item.photo} className="w-full rounded" />
+											<img alt="" src={item.photo} className="w-full rounded" />
 										</td>
 
 

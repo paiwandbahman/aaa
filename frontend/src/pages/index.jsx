@@ -10,7 +10,7 @@ import Service from "./service";
 function Index() {
   return (
     <>
-      <div className="hidden md:block">
+      <div className="hidden md:block ">
         <video className="hidden md:block" autoPlay muted loop id="myVideo">
           <source src={`${process.env.PUBLIC_URL}/assets/wallpaper/facebook.mp4`} type="video/mp4" />
         </video>
@@ -49,7 +49,7 @@ function Index() {
               </div>
               <div className="mt-10 text-center">
                 <a
-                   href="tel:+9647737330003"
+                  href="tel:0773 733 0003"
                   className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
                 >
                   <i className="fa-solid fa-phone"></i> Call Now
@@ -123,7 +123,7 @@ function Index() {
             </div>
             <div className="mt-10 text-center">
               <a
-                href="tel:+9647737330003"
+                href="tel:"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
                 <i className="fa-solid fa-phone"></i> Call Now
@@ -213,7 +213,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -225,7 +225,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -234,7 +234,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -246,7 +246,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -255,7 +255,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -267,7 +267,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -276,7 +276,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -288,7 +288,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -297,7 +297,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -309,7 +309,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -318,7 +318,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -330,7 +330,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -339,7 +339,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -350,7 +350,7 @@ function Index() {
                 resizeMode="contain"
                 style={{
                   width: window.innerWidth > 500 ? "" : "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                   backgroundColor: "white",
                   borderRadius: 10,
                 }}
@@ -361,7 +361,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -373,7 +373,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
@@ -382,7 +382,7 @@ function Index() {
             <div
               style={{
                 width: window.innerWidth > 500 ? "80%" : "100%",
-                height: window.innerWidth > 500 ? 200 : 200,
+                height: window.innerWidth > 1800 ? 300 : 200,
                 backgroundColor: "white",
                 borderRadius: 10,
               }}
@@ -394,7 +394,7 @@ function Index() {
                 style={{
                   borderRadius: 10,
                   width: "100%",
-                  height: window.innerWidth > 500 ? 200 : 200,
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>

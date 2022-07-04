@@ -58,7 +58,7 @@ function Detail() {
 
                     {photo.map((item) => (
                         <SwiperSlide>
-                            <img className="w-10/12 rounded-xl mx-auto  h-[200px] md:h-[310px]" alt="" src={`${process.env.REACT_APP_BASE_URL}images/${item}`} />
+                            <img className="w-10/12 rounded-xl mx-auto  h-[200px] md:h-[310px]" alt="" src={item} />
                         </SwiperSlide>
                     ))}
 

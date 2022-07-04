@@ -7,10 +7,10 @@ import { FreeMode, Pagination, Autoplay } from "swiper";
 
 function Service() {
   return (
-    <>
+    <div className="bg-white">
       {/* social media service */}
 
-      <div className="w-10/12 mx-auto mt-32">
+      <div className="w-10/12 mx-auto ">
         <p className="font-bold text-center text-orange-400 uppercase">
           Services
         </p>
@@ -347,7 +347,7 @@ function Service() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

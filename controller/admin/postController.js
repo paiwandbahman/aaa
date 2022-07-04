@@ -11,16 +11,12 @@ exports.store = (req, res) => {
 
     const post = new Post();
 
-    post.title = req.body.title;
-    post.description = req.body.description;
-    post.link = req.body.link;
-    post.time = req.body.time;
-
-    req.files.forEach((file) => {
-        post.photo.push(file.filename)
-    })
+    post.title = req.body.data.title;
+    post.description = req.body.data.description;
+    post.link = req.body.data.link;
+    post.time = req.body.data.time;
+    post.photo = req.body.data.photo;
     post.save();
-
 
     return res.json({
         msg: 'success'
@@ -47,17 +43,13 @@ exports.edit = (req, res) => {
 exports.update = (req, res) => {
     Post.findById(req.params.id).then((data) => {
         if (data) {
-            data.title = req.body.title;
-            data.description = req.body.description;
-            data.link = req.body.link;
-            data.time = req.body.time;
+            data.title = req.body.data.title;
+            data.description = req.body.data.description;
+            data.link = req.body.data.link;
+            data.time = req.body.data.time;
 
-            if (req.files.length > 0) {
-                data.photo = []
-
-                req.files.forEach((file) => {
-                    data.photo.push(file.filename)
-                })
+            if (req.body.data.photo.length > 0) {
+                data.photo = req.body.data.photo;
             }
 
             data.save();

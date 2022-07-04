@@ -11,7 +11,7 @@ exports.store = (req, res) => {
 
     const slide = new Slide();
 
-    slide.photo = req.file.filename;
+    slide.photo = req.body.data.photo;
 
     slide.save();
 

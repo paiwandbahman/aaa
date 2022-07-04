@@ -19,7 +19,7 @@ function Development() {
         className="  sm:h-[1750px] md:h-[600px] lg:h-screen mt-0 z-16"
         style={{
           height: window.innerWidth > 500 ? 500 : "95vh",
-          backgroundImage:   "radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,0.9) 0.3%, rgba(30,33,48,0.9) 90.2% )",
+          backgroundImage: "radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,0.9) 0.3%, rgba(30,33,48,0.9) 90.2% )",
         }}
       >
         <div
@@ -49,7 +49,7 @@ function Development() {
             </div>
             <div className="mt-10 text-center">
               <a
-                 href="tel:+9647737330003"
+                href="tel:0773 733 0003"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
                 <i className="fa-solid fa-phone"></i> Call Now
@@ -57,8 +57,9 @@ function Development() {
             </div>
           </div>
           <div
+            className="mt-10 md:w-7/12 lg:w-6/12 2xl:w-4/12"
             style={{
-              width: window.innerWidth > 500 ? "60%" : "100%",
+             
               marginTop: window.innerWidth > 500 ? "" : "30%",
             }}
           >
@@ -107,9 +108,9 @@ function Development() {
       </div>
 
       <div className="w-10/12 mx-auto">
-        <System />  
-      </div>   
-        
+        <System />
+      </div>
+
 
       <p className="mb-10 text-2xl font-bold text-center text-gray-800">Our Projects</p>
 
@@ -118,7 +119,7 @@ function Development() {
           <div key={index}>
             <div className="relative p-2 bg-gray-200 rounded-xl">
               <img
-                src={`${process.env.REACT_APP_BASE_URL}images/${item.photo[0]}`}
+                src={item.photo[0]}
                 className="relative w-full border shadow -top-10 rounded-3xl"
                 alt=""
               />

@@ -7,5 +7,5 @@ if (localStorage.getItem('token')) {
 }
 
 export default axios.create({
-  baseURL: "https://peshawa.tech/"
+  baseURL: `http://localhost:3001/`
 });

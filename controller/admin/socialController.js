@@ -11,13 +11,11 @@ exports.store = (req, res) => {
 
     const social = new Social();
 
-    social.title = req.body.title;
-    social.description = req.body.description;
-    social.link = req.body.link;
+    social.title = req.body.data.title;
+    social.description = req.body.data.description;
+    social.link = req.body.data.link;
+    social.photo = req.body.data.photo;
 
-    req.files.forEach((file) => {
-        social.photo.push(file.filename)
-    })
     social.save();
 
 
@@ -46,16 +44,12 @@ exports.edit = (req, res) => {
 exports.update = (req, res) => {
     Social.findById(req.params.id).then((data) => {
         if (data) {
-            data.title = req.body.title;
-            data.description = req.body.description;
-            data.link = req.body.link;
+            data.title = req.body.data.title;
+            data.description = req.body.data.description;
+            data.link = req.body.data.link;
 
-            if (req.files.length > 0) {
-                data.photo = []
-
-                req.files.forEach((file) => {
-                    data.photo.push(file.filename)
-                })
+            if (req.body.data.photo.length > 0) {
+                data.photo = req.body.data.photo;
             }
 
             data.save();

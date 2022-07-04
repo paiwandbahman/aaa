@@ -85,7 +85,7 @@ function Footer() {
                 <SwiperSlide className="cursor-pointer">
                   <div>
                     <img
-                      src={`${process.env.REACT_APP_BASE_URL}images/${item.photo}`}
+                      src={item.photo}
                       alt=""
                       resizeMode="contain"
                       className="h-full rounded-xl"

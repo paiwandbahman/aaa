@@ -17,7 +17,7 @@ function Social() {
         className="  sm:h-[1750px] md:h-[600px] lg:h-screen mt-0 z-16"
         style={{
           height: window.innerWidth > 500 ? 500 : "95vh",
-          backgroundImage:   "radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,0.9) 0.3%, rgba(30,33,48,0.9) 90.2% )",
+          backgroundImage: "radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,0.9) 0.3%, rgba(30,33,48,0.9) 90.2% )",
         }}
       >
         <div
@@ -46,7 +46,7 @@ function Social() {
             </div>
             <div className="mt-10 text-center">
               <a
-                href="tel:+9647737330003"
+                href="tel:0773 733 0003"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
                 <i className="fa-solid fa-phone"></i> Call Now
@@ -85,7 +85,7 @@ function Social() {
               </p>
             </div>
 
-            <div className="relative w-9/12 mx-auto mt-0 -mt-16 md:mt-10 md:w-6/12 ">
+            <div className="relative w-9/12 mx-auto -mt-16 md:mt-10 md:w-6/12 ">
               <img
                 src={`${process.env.PUBLIC_URL}/assets/wallpaper/social.png`}
                 alt=""
@@ -107,7 +107,7 @@ function Social() {
               </p>
             </div>
             <img
-              src={`${process.env.REACT_APP_BASE_URL}images/${item.photo[0]}`}
+              src={item.photo[0]}
               className="w-full h-48"
               alt=""
             />
