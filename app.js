@@ -31,7 +31,6 @@ const apiRequestLimiter = rateLimit({
     });
   },
 });
- 
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -49,13 +48,13 @@ const socialAdminRoutes = require("./routes/admin/social");
 const slideAdminRoutes = require("./routes/admin/slide");
 
 //public api
-app.use("/public/",apiRequestLimiter, publicPost);
-app.use("/auth",apiRequestLimiter, authRoutes);
+app.use("/public/", apiRequestLimiter, publicPost);
+app.use("/auth", apiRequestLimiter, authRoutes);
 
 //admin api
-app.use("/admin/post", [auth,apiRequestLimiter], postAdminRoutes);
-app.use("/admin/social", [auth,apiRequestLimiter], socialAdminRoutes);
-app.use("/admin/slide", [auth,apiRequestLimiter], slideAdminRoutes);
+app.use("/admin/post", [auth, apiRequestLimiter], postAdminRoutes);
+app.use("/admin/social", [auth, apiRequestLimiter], socialAdminRoutes);
+app.use("/admin/slide", [auth, apiRequestLimiter], slideAdminRoutes);
 //
 
 __dirname = path.resolve();
@@ -63,7 +62,7 @@ if (process.env.NODE_ENV === "production") {
   console.log("production");
   app.use(express.static(path.join(__dirname, "frontend/build")));
 
-  app.get("/", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 } else {
