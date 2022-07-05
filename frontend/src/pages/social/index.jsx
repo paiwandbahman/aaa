@@ -102,13 +102,13 @@ function Social() {
             className="relative overflow-hidden bg-white shadow group rounded-xl"
           >
             <div className="absolute w-full h-16 bg-gradient-to-b from-black/60 group-hover:from-blue-600/50">
-              <p className="mt-1 text-lg font-bold text-center text-white">
+              <p className="mt-1 font-bold text-center text-white">
                 {item.title}
               </p>
             </div>
             <img
               src={item.photo[0]}
-              className="w-full h-48"
+              className="w-full "
               alt=""
             />
             <div className="flex items-center justify-end px-2 py-4">

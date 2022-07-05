@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import axios from '../../axios/index'
 import { useEffect, useState } from "react";
@@ -26,9 +26,9 @@ function Detail() {
     return (<>
         <div>
             <button onClick={() => navigate(-1)} className="px-8 py-2 mx-5 mt-2 text-white bg-gray-600 rounded"> <i className="fa-solid fa-arrow-left"></i> </button>
-            <div className="flex justify-between px-2 mt-10 text-sm md:px-6 md:text-lg">
-                <p className="px-10 py-1 text-white bg-gray-600 rounded-full">{data.title}</p>
-                <a href={data.link} className="px-10 py-1 text-white bg-gray-600 rounded-full"> <i className="fas fa-link"></i> {data.link}</a>
+            <div className="justify-between px-2 mt-10 text-sm md:flex md:px-6 ">
+                <p className="px-10 py-1 mb-4 text-center text-white bg-gray-600 rounded-full md:mb-auto md:text-left">{data.title}</p>
+                <a href={data.link} className="px-10 py-1 text-white bg-gray-600 rounded-full"> <i className="fas fa-link"></i> View Page</a>
             </div>
             <div className="grid grid-cols-1 gap-5 mt-4 md:grid-cols-3">
                 {photo.map((item) => (
