@@ -1,170 +1,121 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import { FreeMode, Pagination, Autoplay } from "swiper";
+import { useEffect } from "react";
 
 function System() {
-    return (<>
-        <div className="p-2 overflow-hidden mt-30">
-            <p className="mb-10 text-2xl font-bold text-center text-gray-800">Our Management System</p>
-            <Swiper
-                slidesPerView={window.innerWidth > 500 ? 3 : 1}
-                spaceBetween={30}
-                freeMode={true}
-                autoplay={{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                }}
-                modules={[Autoplay, FreeMode, Pagination]}
-                pagination={{
-                    clickable: true,
-                }}
-                className="pb-10 mb-10 mySwiper"
-            >
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/system2.jpg`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-blue-500 rounded-full">Hospital Management System</p>
-                    </div>
-                </SwiperSlide>
 
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/content.webp`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-purple-900 rounded-full">Content Management System</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/fastfood.webp`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-green-700 rounded-full">FastFood Management System</p>
-                    </div>
 
-                </SwiperSlide>
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/task.webp`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-blue-800 rounded-full">Task Management System</p>
-                    </div>
 
-                </SwiperSlide>
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/restaurant.jpg`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-indigo-400 rounded-full">Restaurant Management System</p>
-                    </div>
+    useEffect(() => {
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
 
-                </SwiperSlide>
+        const texts = [
+            "Website Development",
+            "System Development",
+            "Application Development",
 
-                <SwiperSlide className="cursor-pointer">
-                    <div
-                        style={{
-                            width: window.innerWidth > 500 ? "80%" : "100%",
-                            height: 300,
-                            backgroundColor: "white",
-                            borderRadius: 10,
-                        }}
-                    >
-                        <img
-                            src={`${process.env.PUBLIC_URL}/assets/wallpaper/clinic.jpg`}
-                            alt=""
-                            resizeMode="cover"
-                            style={{
-                                borderRadius: 10,
-                                width: "100%",
-                                height: 230,
-                            }}
-                        />
-                        <p className="p-1 text-center text-white bg-blue-500 rounded-full">Clinc Management System</p>
-                    </div>
+        ];
 
-                </SwiperSlide>
+        const morphTime = 1;
+        const cooldownTime = 0.25;
 
-            </Swiper>
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 2) {
+                cooldown = cooldownTime;
+                fraction = 2;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+        animate();
+
+    }, []);
+    return (<div className="items-center space-x-3 md:flex">
+        <img
+            src={`${process.env.PUBLIC_URL}/assets/wallpaper/code.gif`}
+            alt=""
+            resizeMode="cover"
+            className="w-full md:w-6/12"
+            style={{
+                borderRadius: 10,
+            }}
+        />
+
+        <div>
+            <div className="relative mt-10 text-gray-500 md:mt-0">
+                <span id="text1" className="text-5xl text-center md:text-6xl md:text-left"></span>
+                <span id="text2" className="text-5xl text-center md:text-6xl md:text-left"></span>
+            </div>
+
+            <svg id="filters">
+                <defs>
+                    <filter id="threshold">
+                        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140" />
+                    </filter>
+                </defs>
+            </svg>
         </div>
-    </>);
+    </div>);
 }
 
 export default System;

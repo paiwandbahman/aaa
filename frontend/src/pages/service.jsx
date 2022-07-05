@@ -18,7 +18,7 @@ function Service() {
           social media
         </p>
         <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-green-500/60">
                 <i className="fa-solid fa-image"></i>
@@ -26,7 +26,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Page Management</p>
             </div>
           </div>
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-blue-500/60">
                 <i className="fa-solid fa-image"></i>
@@ -34,7 +34,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Social Media Problem</p>
             </div>
           </div>
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-red-500/60">
                 <i className="fa-solid fa-image"></i>
@@ -42,7 +42,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Follow/Like</p>
             </div>
           </div>
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-yellow-500/60">
                 <i className="fa-solid fa-image"></i>
@@ -89,7 +89,7 @@ function Service() {
               <Link to="/social"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
-                Goto Social 
+                Goto Social
               </Link>
             </p>
           </div>
@@ -100,7 +100,7 @@ function Service() {
         className="mx-6 mt-10 md:mt-0"
         style={{ textAlign: "center", overflow: "hidden" }}
       >
-        <p className="mx-auto mb-10 text-xs font-bold text-center text-white bg-orange-500 rounded-full md:text-2xl md:w-6/12">
+        <p className="mx-auto mb-10 text-xs font-bold text-center text-gray-600 rounded-full md:text-2xl md:w-6/12">
           Public figures have entrusted their work to Us
         </p>
       </div>
@@ -123,7 +123,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: 250,
+              aspectRatio: 1 / 1,
               backgroundColor: "white",
               borderRadius: 10,
             }}
@@ -137,7 +137,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: window.innerWidth > 500 ? 250 : 200,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -146,7 +146,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: window.innerWidth > 500 ? 250 : 200,
+              aspectRatio: 1 / 1,
               backgroundColor: "white",
               borderRadius: 10,
             }}
@@ -160,7 +160,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: window.innerWidth > 500 ? 250 : 200,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -169,8 +169,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: 250,
-              backgroundColor: "white",
+              aspectRatio: 1 / 1, backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -183,7 +182,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: window.innerWidth > 500 ? 250 : 200,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -192,8 +191,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: 250,
-              backgroundColor: "white",
+              aspectRatio: 1 / 1, backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -206,7 +204,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: 250,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -215,8 +213,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: 250,
-              backgroundColor: "white",
+              aspectRatio: 1 / 1, backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -229,7 +226,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: window.innerWidth > 500 ? 250 : 200,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -238,8 +235,7 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              height: 250,
-              backgroundColor: "white",
+              aspectRatio: 1 / 1, backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -252,7 +248,7 @@ function Service() {
               style={{
                 borderRadius: 10,
                 width: "80%",
-                height: window.innerWidth > 500 ? 250 : 200,
+                aspectRatio: 1 / 1,
               }}
             />
           </div>
@@ -269,7 +265,7 @@ function Service() {
           Development
         </p>
         <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-green-500/60">
                 <i className="fa-solid fa-database"></i>
@@ -277,7 +273,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">System</p>
             </div>
           </div>
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-blue-500/60">
                 <i className="fa-solid fa-globe"></i>
@@ -285,7 +281,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Website</p>
             </div>
           </div>
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-red-500/60">
                 <i className="fa-solid fa-globe"></i>
@@ -294,7 +290,7 @@ function Service() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg hover:bg-gray-800 hover:text-white hover:scale-110">
+          <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-red-500/60">
                 <i className="fa-solid fa-mobile-button"></i>
@@ -330,10 +326,10 @@ function Service() {
               Satisfaction
             </p>
             <p className="mt-10">
-             <Link to="/development"
+              <Link to="/development"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
-                Goto Development 
+                Goto Development
               </Link>
             </p>
           </div>

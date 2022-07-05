@@ -88,3 +88,14 @@
   min-height: 100%;
   z-index: -100;
 }
+
+
+#text1,
+#text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    user-select: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
