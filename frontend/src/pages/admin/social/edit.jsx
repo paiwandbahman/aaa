@@ -84,7 +84,7 @@ function Edit() {
       setBtn(true)
       setProgresspercent(0)
     })
-  }, []);
+  });
 
   return (<>
     <div className="block w-full p-6 mx-auto mt-10 bg-white rounded-lg shadow-lg md:w-8/12">
