@@ -13,7 +13,13 @@ const corsOptions = {
   origin: "https://peshawa.tech/",
 };
 app.use(cors(corsOptions));
-
+app.enable("trust proxy");
+app.use("*", (req, res, next) => {
+  if (req.secure) {
+    return next();
+  }
+  res.redirect(`https://${req.hostname}${req.url}`);
+});
 const apiRequestLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 40,
@@ -27,19 +33,6 @@ app.use(apiRequestLimiter);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
-
-//csrf
-
-// var csrfProtection = csrf({ cookie: true })
-
-// app.use(cookieParser())
-// app.use(csrfProtection);
-
-// app.get('/auth/csrf-token', (req, res) => {
-//     res.json({ csrfToken: req.csrfToken() });
-// });
-
-//end csrf
 
 app.use("/images", express.static("images"));
 
