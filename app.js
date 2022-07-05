@@ -31,7 +31,7 @@ const apiRequestLimiter = rateLimit({
     });
   },
 });
-app.use(apiRequestLimiter);
+ 
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -49,13 +49,13 @@ const socialAdminRoutes = require("./routes/admin/social");
 const slideAdminRoutes = require("./routes/admin/slide");
 
 //public api
-app.use("/public/", publicPost);
-app.use("/auth", authRoutes);
+app.use("/public/",apiRequestLimiter, publicPost);
+app.use("/auth",apiRequestLimiter, authRoutes);
 
 //admin api
-app.use("/admin/post", [auth], postAdminRoutes);
-app.use("/admin/social", [auth], socialAdminRoutes);
-app.use("/admin/slide", [auth], slideAdminRoutes);
+app.use("/admin/post", [auth,apiRequestLimiter], postAdminRoutes);
+app.use("/admin/social", [auth,apiRequestLimiter], socialAdminRoutes);
+app.use("/admin/slide", [auth,apiRequestLimiter], slideAdminRoutes);
 //
 
 __dirname = path.resolve();
