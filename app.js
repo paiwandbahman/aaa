@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "https://peshawa.tech/",
+  origin:'www.peshawa.tech',
 };
 app.use(cors(corsOptions));
 app.enable("trust proxy");
