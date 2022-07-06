@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 var csrfProtection = csrf({ cookie: true })
 
 const corsOptions = {
-    origin: "www.peshawa.tech",
+    origin: "https://www.peshawa.tech",
     credentials: true,
 }
 
