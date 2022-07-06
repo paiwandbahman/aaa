@@ -88,7 +88,7 @@ function Footer() {
                       src={item.photo}
                       alt=""
                       resizeMode="contain"
-                      className="h-full rounded-xl"
+                      className="md:h-full rounded-xl"
                     />
                   </div>
                 </SwiperSlide>
