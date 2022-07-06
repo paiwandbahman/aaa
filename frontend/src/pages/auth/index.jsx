@@ -1,33 +1,48 @@
-import { useState } from 'react'
-import API from '../../axios';
-
-
+import { useEffect, useState } from 'react'
+import Swal from 'sweetalert'
+import AXIOS from '../../axios/index'
 
 function Index() {
 
-  
+    async function getToken() {
+
+        AXIOS.get('get/csrf-token', {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            withCredentials: true
+        }).then(({ data }) => {
+            AXIOS.defaults.headers.common['x-csrf-token'] = data.csrfToken
+            AXIOS.defaults.withCredentials = true
+        })
+    }
+
+    useEffect(() => {
+        getToken();
+    }, [])
+
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handelLogin = (e) => {
+    const handelLogin = async (e) => {
         e.preventDefault();
-        API.post('/auth/login', {
-            headers: {
-                'Content-Type': 'application/json'
-            },
+
+        AXIOS.post('auth/login', {
             data: { email, password },
         }).then(({ data }) => {
-
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 window.location.href = '/admin'
             }
-
-        }).catch((e) => {
-            console.log(e)
+        }).catch(() => {
+            Swal({
+                icon: 'error',
+                text: 'Credentials Invalid',
+            })
         })
     }
-
 
 
     return (

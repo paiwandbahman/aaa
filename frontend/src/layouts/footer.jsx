@@ -82,7 +82,7 @@ function Footer() {
               className="pb-10 mySwiper md:h-96 rounded-xl"
             >
               {data.map((item, index) => (
-                <SwiperSlide className="cursor-pointer">
+                <SwiperSlide key={index} className="cursor-pointer">
                   <div>
                     <img
                       src={item.photo}

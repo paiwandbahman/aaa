@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
@@ -7,19 +6,13 @@ const rateLimit = require("express-rate-limit");
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
+
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const csrf = require('csurf')
+
 const app = express();
 
-const corsOptions = {
-  origin:'www.peshawa.tech',
-};
-app.use(cors(corsOptions));
-app.enable("trust proxy");
-app.use("*", (req, res, next) => {
-  if (req.secure) {
-    return next();
-  }
-  res.redirect(`https://${req.hostname}${req.url}`);
-});
 const apiRequestLimiter = rateLimit({
   windowMs: 2 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
@@ -32,8 +25,25 @@ const apiRequestLimiter = rateLimit({
   },
 });
 
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
+
+
+var csrfProtection = csrf({ cookie: true })
+
+const corsOptions = {
+    origin: "www.peshawa.tech",
+    credentials: true,
+}
+
+app.use(cors(corsOptions));
+app.use(cookieParser())
+app.use(csrfProtection);
+
+app.get('/get/csrf-token', (req, res) => {
+    res.json({ csrfToken: req.csrfToken() });
+});
+
 
 app.use("/images", express.static("images"));
 
@@ -57,6 +67,15 @@ app.use("/admin/social", [auth, apiRequestLimiter], socialAdminRoutes);
 app.use("/admin/slide", [auth, apiRequestLimiter], slideAdminRoutes);
 //
 
+
+app.enable("trust proxy");
+app.use("*", (req, res, next) => {
+  if (req.secure) {
+    return next();
+  }
+  res.redirect(`https://${req.hostname}${req.url}`);
+});
+
 __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   console.log("production");
@@ -74,6 +93,7 @@ if (process.env.NODE_ENV === "production") {
 }
 const PORT = process.env.PORT || 3001;
 const urlConnection = `mongodb+srv://workaccount:RhLBqarwIi0mWWH4@peshawagroup.fvkjk.mongodb.net/?retryWrites=true&w=majority`;
+
 mongoose
   .connect(urlConnection, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {})
@@ -86,3 +106,5 @@ app.listen(
     `Server running in ${process.env.NODE_ENV} mode on port ${PORT}..`
   )
 );
+
+

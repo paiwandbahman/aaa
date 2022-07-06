@@ -19,11 +19,13 @@ function Header() {
         }}
       >
         <div className="flex items-center justify-between w-full mx-auto md:w-9/12">
+        <Link to="/">
           <img
             src={`${process.env.PUBLIC_URL}/assets/logo/logo.png`}
             className="w-24 md:w-40"
             alt=""
           />
+        </Link>
           <div className="hidden space-x-5 font-bold text-white lg:block">
             <Link
               className="text-gray-200 hover:text-orange-400"
