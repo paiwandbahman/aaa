@@ -346,13 +346,13 @@ function Index() {
             >
               <img
                 src={`${process.env.PUBLIC_URL}/assets/wallpaper/comp1.png`}
+
                 alt=""
-                resizeMode="contain"
+                resizeMode="cover"
                 style={{
-                  width: window.innerWidth > 500 ? "" : "100%",
-                  height: window.innerWidth > 1800 ? 300 : 200,
-                  backgroundColor: "white",
                   borderRadius: 10,
+                  width: "100%",
+                  height: window.innerWidth > 1800 ? 300 : 200,
                 }}
               />
             </div>
