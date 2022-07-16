@@ -7,7 +7,7 @@ import { FreeMode, Pagination, Autoplay } from "swiper";
 
 function Service() {
   return (
-    <div className="bg-white">
+    <div className="bg-white mt-10">
       {/* social media service */}
 
       <div className="w-10/12 mx-auto ">

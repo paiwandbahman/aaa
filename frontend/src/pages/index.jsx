@@ -194,7 +194,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="flex items-center p-2 overflow-hidden bg-gray-900 mt-30">
+      <div className="flex items-center p-2 overflow-hidden bg-gray-900 mt-20 md:mt-0">
         <Swiper
           slidesPerView={window.innerWidth > 500 ? 3 : 1}
           spaceBetween={30}
@@ -401,7 +401,7 @@ function Index() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <Service />
+      <Service  />
 
     </>
   );
