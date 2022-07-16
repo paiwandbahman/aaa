@@ -12,7 +12,10 @@ function Index() {
     <>
       <div className="hidden md:block ">
         <video className="hidden md:block" autoPlay muted loop id="myVideo">
-          <source src={`${process.env.PUBLIC_URL}/assets/wallpaper/facebook.mp4`} type="video/mp4" />
+          <source
+            src={`${process.env.PUBLIC_URL}/assets/wallpaper/facebook.mp4`}
+            type="video/mp4"
+          />
         </video>
         <div
           className="  sm:h-[1750px] md:h-[600px] lg:h-screen  mt-0 z-16"
@@ -81,9 +84,7 @@ function Index() {
                   </a>
                 </p>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
@@ -194,7 +195,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="flex items-center p-2 overflow-hidden bg-gray-900 mt-20 md:mt-0">
+      <div className="flex items-center p-2 overflow-hidden bg-gray-900 mt-0 md:mt-0">
         <Swiper
           slidesPerView={window.innerWidth > 500 ? 3 : 1}
           spaceBetween={30}
@@ -346,7 +347,6 @@ function Index() {
             >
               <img
                 src={`${process.env.PUBLIC_URL}/assets/wallpaper/comp1.png`}
-
                 alt=""
                 resizeMode="cover"
                 style={{
@@ -401,8 +401,7 @@ function Index() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <Service  />
-
+      <Service />
     </>
   );
 }
