@@ -11,12 +11,12 @@ function Service() {
       {/* social media service */}
 
       <div className="w-10/12 mx-auto ">
-        <p className="font-bold text-center text-orange-400 uppercase">
+        {/* <p className="font-bold text-center text-orange-400 uppercase">
           Services
         </p>
         <p className="text-xl font-bold text-center text-gray-600 uppercase">
           social media
-        </p>
+        </p> */}
         {/* <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
@@ -263,12 +263,12 @@ function Service() {
       {/* developmnet media service */}
 
       <div className="w-10/12 mx-auto mt-32">
-        <p className="font-bold text-center text-orange-400 uppercase">
+        {/* <p className="font-bold text-center text-orange-400 uppercase">
           Services
         </p>
         <p className="text-xl font-bold text-center text-gray-600 uppercase">
           Development
-        </p>
+        </p> */}
         {/* <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
