@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
@@ -17,7 +17,7 @@ function Service() {
         <p className="text-xl font-bold text-center text-gray-600 uppercase">
           social media
         </p>
-        <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {/* <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-green-500/60">
@@ -50,7 +50,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Selling/Buying Page</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex-wrap items-center overflow-hidden md:flex ">
@@ -86,7 +86,8 @@ function Service() {
               low-risk agency option
             </p>
             <p className="mt-10">
-              <Link to="/social"
+              <Link
+                to="/social"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
                 Goto Social
@@ -169,7 +170,8 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              aspectRatio: 1 / 1, backgroundColor: "white",
+              aspectRatio: 1 / 1,
+              backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -191,7 +193,8 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              aspectRatio: 1 / 1, backgroundColor: "white",
+              aspectRatio: 1 / 1,
+              backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -213,7 +216,8 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              aspectRatio: 1 / 1, backgroundColor: "white",
+              aspectRatio: 1 / 1,
+              backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -235,7 +239,8 @@ function Service() {
           <div
             style={{
               width: window.innerWidth > 500 ? "80%" : "80%",
-              aspectRatio: 1 / 1, backgroundColor: "white",
+              aspectRatio: 1 / 1,
+              backgroundColor: "white",
               borderRadius: 10,
             }}
             className="mx-auto"
@@ -264,7 +269,7 @@ function Service() {
         <p className="text-xl font-bold text-center text-gray-600 uppercase">
           Development
         </p>
-        <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {/* <div className="grid grid-cols-1 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="flex items-center justify-center h-40 p-2 duration-200 rounded-lg shadow-lg ">
             <div>
               <p className="flex items-center justify-center w-12 h-12 mx-auto text-xl text-white rounded-full bg-green-500/60">
@@ -298,7 +303,7 @@ function Service() {
               <p className="mt-3 text-xl text-center">Mobile Application</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex flex-wrap items-center overflow-hidden ">
@@ -326,7 +331,8 @@ function Service() {
               Satisfaction
             </p>
             <p className="mt-10">
-              <Link to="/development"
+              <Link
+                to="/development"
                 className="px-10 py-1 font-bold text-white bg-orange-500 rounded-full"
               >
                 Goto Development

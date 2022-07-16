@@ -52,13 +52,13 @@ function Footer() {
             >
               Social Media
             </Link>
-            <Link
+            {/* <Link
               to="service"
               className="text-gray-200 hover:text-orange-400"
               style={location === "/service" ? { color: "orange" } : {}}
             >
               Services
-            </Link>
+            </Link> */}
             <Link
               to="about"
               className="text-gray-200 hover:text-orange-400"

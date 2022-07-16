@@ -77,7 +77,7 @@ function App() {
               <Route path='/development' element={<Development />} />
               <Route path='/development/:id' element={<DetailDevelopment />} />
               <Route path='/about' element={<About />} />
-              <Route path='/service' element={<Service />} />
+              {/* <Route path='/service' element={<Service />} /> */}
               <Route path='/social' element={<Social />} />
               <Route path='/social/:id' element={<SocialDetail />} />
               <Route path='/login/admin/panel' element={<Auth />} />
